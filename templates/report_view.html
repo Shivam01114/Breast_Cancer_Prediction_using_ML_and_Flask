@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Report | CancerAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h1>🧬 CancerAI – AI Medical Report</h1>
+</nav>
+
+<section class="home-section">
+
+  <h2 class="section-title">Breast Cancer Prediction Report</h2>
+  <p style="text-align:center; opacity:0.8;">
+    Generated using Artificial Intelligence & Machine Learning
+  </p>
+
+  <!-- ================= PATIENT DETAILS ================= -->
+  <div class="report-card">
+    <h3>🧍 Patient Information</h3>
+    <p><b>Name:</b> {{ data.name }}</p>
+    <p><b>Age:</b> {{ data.age }}</p>
+    <p><b>Gender:</b> {{ data.gender }}</p>
+    <p><b>Phone:</b> {{ data.phone }}</p>
+    <p><b>Email:</b> {{ data.email }}</p>
+  </div>
+
+  <!-- ================= AI RESULT ================= -->
+  <div class="report-card">
+    <h3>🧠 AI Diagnosis Summary</h3>
+    <p>
+      Based on the analysis of <b>30 tumor-related clinical parameters</b>,
+      the CancerAI system has classified the tumor as:
+    </p>
+
+    <!-- RESULT TEXT -->
+    <h2 style="color:#ffd000; margin-top:10px;">
+      Benign Tumor (Non-Cancerous)
+    </h2>
+
+    <p style="margin-top:10px;">
+      This result indicates that the tumor characteristics are
+      <b>less aggressive</b> and typically associated with
+      non-cancerous growth patterns.
+    </p>
+  </div>
+
+  <!-- ================= RISK INTERPRETATION ================= -->
+  <div class="report-card">
+    <h3>📊 Risk Interpretation</h3>
+    <ul>
+      <li>🟢 Low abnormal cell growth patterns detected</li>
+      <li>🟢 Cell symmetry and boundary behavior within safe range</li>
+      <li>🟢 No extreme worst-case tumor features observed</li>
+    </ul>
+  </div>
+
+  <!-- ================= FEATURE TABLE ================= -->
+  <div class="report-card">
+    <h3>🔬 Tumor Feature Values (Input Analysis)</h3>
+    <p>
+      The following tumor-related inputs were analyzed by the AI model.
+      These values describe size, texture, shape, spread, and worst-case behavior.
+    </p>
+
+    <!-- AUTO-FILLED BY report.js -->
+    <div id="feature-table"></div>
+  </div>
+
+  <!-- ================= DIET & LIFESTYLE ================= -->
+  <div class="report-card">
+    <h3>🥗 Diet & Lifestyle Recommendations</h3>
+    <ul>
+      <li>🥬 Increase intake of green vegetables and fruits</li>
+      <li>🥗 Prefer high-fiber and antioxidant-rich foods</li>
+      <li>🚶 Engage in regular physical activity (30 min/day)</li>
+      <li>💧 Stay well hydrated</li>
+      <li>🚭 Avoid smoking and limit alcohol intake</li>
+    </ul>
+  </div>
+
+  <!-- ================= PRECAUTIONS ================= -->
+  <div class="report-card">
+    <h3>🛡️ Precautions & Follow-Up</h3>
+    <ul>
+      <li>✔ Regular medical check-ups are recommended</li>
+      <li>✔ Monitor for any unusual physical changes</li>
+      <li>✔ Follow doctor-advised screening schedules</li>
+    </ul>
+  </div>
+
+  <!-- ================= DISCLAIMER ================= -->
+  <div class="report-card">
+    <h3>⚠️ Medical Disclaimer</h3>
+    <p>
+      This report is generated using an AI-based prediction model
+      and is intended for <b>informational purposes only</b>.
+      It should not be considered a replacement for professional
+      medical diagnosis or treatment.
+    </p>
+  </div>
+
+  <!-- ================= ACTION ================= -->
+  <div style="text-align:center; margin-top:40px;">
+    <button class="btn big" onclick="window.print()">
+      📄 Download / Print Medical Report
+    </button>
+  </div>
+
+</section>
+
+<footer style="text-align:center; margin:40px 0; opacity:0.6;">
+  <p>© 2026 CancerAI | AI-Assisted Healthcare Reporting</p>
+</footer>
+
+<!-- REPORT SCRIPT -->
+<script src="/static/report.js"></script>
+<script>
+  loadReportView();
+</script>
+
+</body>
+</html>

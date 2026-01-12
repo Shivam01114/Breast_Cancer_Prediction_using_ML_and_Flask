@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team | CancerAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h1>🧬 CancerAI</h1>
+  <div>
+    <a href="/">Home</a>
+    <a href="/predict">Predict</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="team-hero">
+  <h2>Meet the Team</h2>
+  <p>
+    A focused 2-member team combining <b>Machine Learning</b>
+    and <b>Full-Stack Development</b> to build CancerAI.
+  </p>
+</section>
+
+<!-- TEAM CARDS -->
+<section class="team-section">
+
+  <!-- SHIVAM -->
+  <div class="team-card" onclick="openPopup('shivam')">
+    <h3>👨‍💻 Shivam Singh</h3>
+    <p class="role">Full-Stack ML Platform Developer</p>
+    <p class="hint">Click to view contributions</p>
+  </div>
+
+  <!-- DEEPENDRA -->
+  <div class="team-card" onclick="openPopup('deependra')">
+    <h3>👨‍🔬 Deependra Singh</h3>
+    <p class="role">Machine Learning Model Developer</p>
+    <p class="hint">Click to view contributions</p>
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="team-features">
+  <h2>Team Collaboration Highlights</h2>
+
+  <div class="features-grid">
+    <div class="feature-box">🧠 ML Model Training</div>
+    <div class="feature-box">📦 Model Serialization (Pickle)</div>
+    <div class="feature-box">🌐 Web Platform Development</div>
+    <div class="feature-box">🧪 Model Testing & Validation</div>
+    <div class="feature-box">🎨 Dark Neon UI/UX</div>
+    <div class="feature-box">🚀 End-to-End Deployment Ready</div>
+  </div>
+</section>
+
+<!-- POPUP -->
+<div id="team-popup" class="popup">
+  <div class="popup-box">
+    <h2 id="popup-name"></h2>
+    <p id="popup-content"></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 CancerAI | Built by Shivam Singh & Deependra Singh</p>
+</footer>
+
+<script>
+function openPopup(member) {
+  const popup = document.getElementById("team-popup");
+  const name = document.getElementById("popup-name");
+  const content = document.getElementById("popup-content");
+
+  popup.style.display = "flex";
+
+  if (member === "shivam") {
+    name.innerText = "👨‍💻 Shivam Singh";
+    name.style.color = "#ffd000";
+    content.innerHTML = `
+      <b>Role:</b> Full-Stack ML Platform Developer<br><br>
+      ✔ Converted trained ML model into <b>pickle (.pkl)</b><br>
+      ✔ Designed & developed the complete web platform<br>
+      ✔ Built UI using <b>HTML, CSS, JavaScript</b><br>
+      ✔ Integrated model with <b>Flask backend</b><br>
+      ✔ Implemented real-time prediction logic<br>
+      ✔ Tested model using demo benign & malignant cases<br>
+      ✔ Designed dark neon (black + yellow) UI/UX
+    `;
+  }
+
+  if (member === "deependra") {
+    name.innerText = "👨‍🔬 Deependra Singh";
+    name.style.color = "#00ff88";
+    content.innerHTML = `
+      <b>Role:</b> Machine Learning Model Developer<br><br>
+      ✔ Worked on Breast Cancer dataset<br>
+      ✔ Selected and trained <b>Logistic Regression</b> model<br>
+      ✔ Performed data preprocessing & feature selection<br>
+      ✔ Achieved reliable classification results<br>
+      ✔ Delivered trained model for deployment
+    `;
+  }
+}
+
+function closePopup() {
+  document.getElementById("team-popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>

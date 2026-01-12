@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Details | CancerAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h1>🧬 CancerAI</h1>
+</nav>
+
+<!-- HERO INFO -->
+<section class="home-section">
+  <h2 class="section-title">Patient Information</h2>
+  <p style="text-align:center; max-width:700px; margin:10px auto; opacity:0.8;">
+    Please enter patient details carefully.
+    This information will appear on the generated medical report.
+  </p>
+
+  <!-- FORM -->
+  <form
+    action="/report-view"
+    method="POST"
+    class="form-box"
+    onsubmit="return validateReportForm()"
+  >
+
+    <!-- NAME -->
+    <label>👤 Full Name</label>
+    <input
+      id="name"
+      name="name"
+      placeholder="Enter patient's full name"
+      required
+    >
+
+    <!-- AGE -->
+    <label>🎂 Age</label>
+    <input
+      id="age"
+      name="age"
+      type="number"
+      placeholder="Enter age (in years)"
+      required
+    >
+
+    <!-- GENDER -->
+    <label>⚧ Gender</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <!-- PHONE -->
+    <label>📞 Phone Number</label>
+    <input
+      id="phone"
+      name="phone"
+      type="tel"
+      placeholder="Enter contact number"
+      required
+    >
+
+    <!-- EMAIL -->
+    <label>📧 Email Address</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      placeholder="Enter email address"
+      required
+    >
+
+    <!-- HIDDEN FEATURES -->
+    <input type="hidden" name="features" id="features">
+
+    <!-- ACTION -->
+    <button class="btn big" type="submit">
+      Next → Generate Report
+    </button>
+
+  </form>
+</section>
+
+<footer style="text-align:center; margin:40px 0; opacity:0.6;">
+  <p>© 2026 CancerAI | Secure Medical Reporting</p>
+</footer>
+
+<!-- SCRIPT -->
+<script src="/static/report.js"></script>
+<script>
+  // auto-fill features from prediction
+  document.getElementById("features").value =
+    sessionStorage.getItem("features");
+</script>
+
+</body>
+</html>

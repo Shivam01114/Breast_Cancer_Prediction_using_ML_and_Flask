@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction | CancerAI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<nav>
+  <h1>🧬 CancerAI</h1>
+  <div>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/team">Team</a>
+  </div>
+</nav>
+
+<h2 style="text-align:center; margin-top:30px; color:#ffd000;">
+  Tumor Details (Enter Approximate Values)
+</h2>
+<p style="text-align:center; opacity:0.8;">
+  Don’t worry about medical terms — hints are provided 👇
+</p>
+
+<div class="grid">
+
+  <!-- MEAN VALUES -->
+  <input title="Average size of tumor (usually between 5–30)"
+         placeholder="Tumor Size (Avg radius)">
+  <input title="How rough or smooth the tumor surface feels"
+         placeholder="Surface Roughness (Avg texture)">
+  <input title="Average boundary length of tumor"
+         placeholder="Tumor Boundary Length">
+  <input title="Overall size area of tumor"
+         placeholder="Tumor Area Size">
+  <input title="How smooth the tumor surface is (0–1 range)"
+         placeholder="Surface Smoothness">
+  <input title="How dense the tumor cells are"
+         placeholder="Tumor Density">
+  <input title="How deep tumor spreads into nearby tissue"
+         placeholder="Tissue Spread Level">
+  <input title="Number of sharp edges in tumor"
+         placeholder="Sharp Edge Points">
+  <input title="How symmetrical the tumor is"
+         placeholder="Tumor Symmetry">
+  <input title="Complexity of tumor shape"
+         placeholder="Shape Complexity">
+
+  <!-- SE VALUES -->
+  <input title="Variation in tumor size"
+         placeholder="Size Variation">
+  <input title="Variation in surface roughness"
+         placeholder="Texture Variation">
+  <input title="Variation in boundary length"
+         placeholder="Boundary Variation">
+  <input title="Variation in tumor area"
+         placeholder="Area Variation">
+  <input title="Change in surface smoothness"
+         placeholder="Smoothness Variation">
+  <input title="Change in tumor density"
+         placeholder="Density Variation">
+  <input title="Change in tissue spread"
+         placeholder="Spread Variation">
+  <input title="Change in sharp edge points"
+         placeholder="Edge Variation">
+  <input title="Change in symmetry"
+         placeholder="Symmetry Variation">
+  <input title="Change in shape complexity"
+         placeholder="Complexity Variation">
+
+  <!-- WORST VALUES -->
+  <input title="Largest tumor size observed"
+         placeholder="Max Tumor Size">
+  <input title="Worst surface roughness observed"
+         placeholder="Worst Texture">
+  <input title="Worst boundary length observed"
+         placeholder="Max Boundary Length">
+  <input title="Worst tumor area observed"
+         placeholder="Max Tumor Area">
+  <input title="Worst surface smoothness"
+         placeholder="Worst Smoothness">
+  <input title="Worst tumor density"
+         placeholder="Worst Density">
+  <input title="Worst tissue spread"
+         placeholder="Worst Spread">
+  <input title="Highest sharp edge points"
+         placeholder="Max Sharp Edges">
+  <input title="Worst symmetry observed"
+         placeholder="Worst Symmetry">
+  <input title="Worst shape complexity"
+         placeholder="Worst Complexity">
+
+</div>
+
+<div style="text-align:center;">
+  <button class="predict-btn" onclick="predict()">Predict</button>
+  <button class="demo-benign" onclick="fillBenign()">Benign_Tumor_Demo</button>
+  <button class="demo-malignant" onclick="fillMalignant()">Malignant_Tumor_Demo</button>
+  <button class="clear-btn" onclick="clearInputs()">Clear</button>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+
+    <!-- RESULT TITLE -->
+    <h2 id="popup-title"></h2>
+
+    <!-- RESULT EXPLANATION -->
+    <p id="popup-text"></p>
+
+    <!-- ACTION BUTTONS -->
+    <div style="margin-top:25px;">
+      <button class="predict-btn" onclick="goToReport()">
+        📄 Generate Medical Report
+      </button>
+      <br><br>
+      <button class="clear-btn" onclick="closePopup()">
+        Close
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="/static/script.js"></script>
+</body>
+</html>
